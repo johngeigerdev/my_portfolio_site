@@ -2,7 +2,6 @@
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
-const navLink = document.querySelectorAll('.nav__link')
 
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
@@ -21,7 +20,7 @@ if(navClose) {
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
-
+const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
     // When we click on each nav__link, we remove the show-menu class
@@ -48,8 +47,24 @@ skillsHeader.forEach((el) =>{
     el.addEventListener('click', toggleSkills)
 })
 /*==================== QUALIFICATION TABS ====================*/
+const tabs = document.querySelectorAll('[data-target]'),
+      tabContents = document.querySelectorAll('[data-content]')
 
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target)
 
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('qualification__active')
+        })
+        target.classList.add('qualification__active')
+
+        tabs.forEach(tab => {
+            tab.classList.remove('qualification__active')
+        })
+        tab.classList.add('qualification__active')
+    })
+})
 /*==================== SERVICES MODAL ====================*/
 
 

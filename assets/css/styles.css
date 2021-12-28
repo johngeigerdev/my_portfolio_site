@@ -478,6 +478,9 @@ display: flex;
 .qualification__active[data-content]{
     display: block;
 }
+.qualification__button.qualification__active{
+    color: var(--first-color);
+}
 
 /*==================== SERVICES ====================*/
 
