@@ -88,7 +88,7 @@ const modalViews = document.querySelectorAll('.services__modal'),
           })
       });
 /*==================== PORTFOLIO SWIPER  ====================*/
-let swiper = new Swiper(".mySwiper", {
+let swiperPortfolio = new Swiper(".portfolio__container", {
     cssMode: true,
     loop: true,
     navigation: {
@@ -102,6 +102,18 @@ let swiper = new Swiper(".mySwiper", {
 });
 
 /*==================== TESTIMONIAL ====================*/
+let swiperTestimonial = new Swiper('.testimonial__container', {
+    loop: true,
+    grabCursor: true,
+    spaceBetween: 48,
+ 
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
+    },
+});
+
 
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
